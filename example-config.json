@@ -7,5 +7,6 @@
     "realname": "chatgpt",
     "channels": ["#rj1"],
     "auth_token": "",
-    "cookie": ""
+    "cookie": "",
+    "useragent": ""
 }

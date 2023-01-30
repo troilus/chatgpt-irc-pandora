@@ -10,6 +10,7 @@ class ChatGPT:
     def __init__(self):
         self.auth_token = options["auth_token"]
         self.cookie = options['cookie']
+        self.useragent = options['useragent']
         self.conversation_id = ""
         self.parent_message_id = str(uuid.uuid4())
         self.message_id = self.parent_message_id
@@ -48,7 +49,7 @@ class ChatGPT:
             "Authorization": f"Bearer {self.auth_token}",
             "Content-Type": "application/json",
             "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
-            "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36",
+            "User-Agent": self.useragent,
             "Cookie": self.cookie,
             "Accept-Language": "en-GB,en-US;q=0.9,en;q=0.8",
             "Accept-Encoding": "gzip, deflate, br",
