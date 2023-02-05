@@ -45,6 +45,9 @@ class ChatGPT:
 
         payload = json.dumps(payload)
 
+        if self.auth_token.startswith("Bearer "):
+            self.auth_token = self.auth_token[7:]
+
         headers = {
             "Authorization": f"Bearer {self.auth_token}",
             "Content-Type": "application/json",
