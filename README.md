@@ -31,7 +31,7 @@ https://user-images.githubusercontent.com/83531587/216813675-52ae3cca-efd0-41e5-
     "realname": "chatgpt",
     "channels": ["#rj1"],
     "auth_token": "",
-    "cookie" "",
+    "cookie": "",
     "useragent": ""
 }
 ```
