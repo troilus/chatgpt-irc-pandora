@@ -29,6 +29,7 @@ https://user-images.githubusercontent.com/83531587/216813675-52ae3cca-efd0-41e5-
     "nickname": "chatgpt",
     "ident": "chatgpt",
     "realname": "chatgpt",
+    "password": "",
     "channels": ["#rj1"],
     "auth_token": "",
     "cookie": "",

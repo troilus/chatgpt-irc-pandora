@@ -169,6 +169,9 @@ async def main_loop(**options):
     sendline = functools.partial(send_line_to_writer, writer)
     sendcmd = functools.partial(send_cmd_to_writer, writer)
 
+    if options.get("password"):
+        sendcmd("PASS", options["password"])
+
     sendline("NICK {nickname}".format(**options))
     sendline("USER {ident} * * :{realname}".format(**options))
 

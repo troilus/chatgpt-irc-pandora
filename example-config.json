@@ -5,6 +5,7 @@
     "nickname": "chatgpt",
     "ident": "chatgpt",
     "realname": "chatgpt",
+    "password": "",
     "channels": ["#rj1"],
     "auth_token": "",
     "cookie": "",
