@@ -9,8 +9,6 @@ import uuid
 class ChatGPT:
     def __init__(self):
         self.auth_token = options["auth_token"]
-        self.cookie = options['cookie']
-        self.useragent = options['useragent']
         self.conversation_id = ""
         self.parent_message_id = str(uuid.uuid4())
         self.message_id = self.parent_message_id
