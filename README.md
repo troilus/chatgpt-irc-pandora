@@ -1,4 +1,4 @@
-# 🤖 chatgpt-irc
+# 🤖 chatgpt-irc-pandora
 
 chat with chatgpt on irc! And using [pengzhile/pandora](https://github.com/pengzhile/pandora) API.
 
