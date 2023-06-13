@@ -24,20 +24,21 @@ class ChatGPT:
         self.parent_message_id = self.message_id
         self.message_id = str(uuid.uuid4())
 
-        url = "https://chat.openai.com/backend-api/conversation"
-
+        #url = "https://chat.openai.com/backend-api/conversation"
+        url = "https://ai.fakeopen.com/v1/chat/completions"
         payload = {
             "action": "next",
             "messages": [
                 {
                     "id": self.message_id,
                     "role": "user",
-                    "content": {"content_type": "text", "parts": [message]},
+                    "content": message,
+                    #"content": {"content_type": "text", "parts": [message]},
                 }
             ],
             "conversation_id": self.conversation_id,
             "parent_message_id": self.parent_message_id,
-            "model": "text-davinci-002-render",
+            "model": "gpt-3.5-turbo"
         }
 
         if self.new_conversation == True:
@@ -49,26 +50,25 @@ class ChatGPT:
             self.auth_token = self.auth_token[7:]
 
         headers = {
-            "Authorization": f"Bearer {self.auth_token}",
-            "Content-Type": "application/json",
-            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
-            "User-Agent": self.useragent,
-            "Cookie": self.cookie,
-            "Accept-Language": "en-GB,en-US;q=0.9,en;q=0.8",
-            "Accept-Encoding": "gzip, deflate, br",
-            "Connection": "keep-alive",
+            'Authorization': f'Bearer {self.auth_token}',
+            'Content-Type': 'application/json'
+            #"Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+            #"User-Agent": self.useragent,
+            #"Cookie": self.cookie,
+            #"Accept-Language": "en-GB,en-US;q=0.9,en;q=0.8",
+            #"Accept-Encoding": "gzip, deflate, br",
+            #"Connection": "keep-alive",
         }
 
         query = requests.request("POST", url, headers=headers, data=payload)
         response = query.text
-
         try:
-            last = response.split(("data:"))[-2]
+            last = response
             data = json.loads(last)
-            message = data["message"]["content"]["parts"][0]
-
+            message = data["choices"][0]["message"]["content"]
+            print(message)
             if self.new_conversation == True:
-                self.conversation_id = data["conversation_id"]
+                self.conversation_id = data["id"]
                 self.new_conversation = False
 
             messages = parse_outgoing(message)
