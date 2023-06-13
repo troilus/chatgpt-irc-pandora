@@ -1,11 +1,11 @@
 {
-    "server": "internetrelaychat.net",
+    "server": "irc.xanyi.top",
     "port": 6697,
     "ssl": true,
     "nickname": "chatgpt",
     "ident": "chatgpt",
     "realname": "chatgpt",
     "password": "",
-    "channels": ["#rj1"],
+    "channels": ["#xanyi.top"],
     "auth_token": "",
 }
