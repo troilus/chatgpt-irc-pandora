@@ -1,6 +1,7 @@
-# 🤖 chatgpt-irc
+# 🤖 chatgpt-irc-pandora
 
 chat with chatgpt on irc! And using [pengzhile/pandora](https://github.com/pengzhile/pandora) API.
+
 在IRC中使用chatgpt, 使用[pengzhile/pandora](https://github.com/pengzhile/pandora) 的API.
 
 ## demo video
